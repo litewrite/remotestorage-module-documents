@@ -1,6 +1,6 @@
 {
   "name": "remotestorage-module-documents",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "RemoteStorage.js module to store lists of documents",
   "main": "remotestorage-module-documents.js",
   "scripts": {
@@ -13,10 +13,11 @@
   "author": "Jorin Vogel <hi@jorin.me>",
   "license": "MIT",
   "repository": {
-     "type": "git",
-     "url": "https://github.com/litewrite/remotestorage-module-documents"
- },
+    "type": "git",
+    "url": "https://github.com/litewrite/remotestorage-module-documents"
+  },
   "devDependencies": {
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "uuid": "^3.1.0"
   }
 }

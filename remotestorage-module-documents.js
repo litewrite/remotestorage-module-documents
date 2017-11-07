@@ -2,7 +2,7 @@
  * File: Documents
  *
  * Maintainer: - Jorin Vogel <hi@jorin.in>
- * Version: -    0.2.0
+ * Version: -    0.2.1
  *
  * This module stores lists of documents.
  * A document has the fields title, content and lastEdited.
@@ -10,6 +10,8 @@
  * This module is used by Litewrite.
  *
  */
+
+var uuid = require('uuid/v4')
 
 function Documents (privateClient, publicClient) {
   // Schema
@@ -94,7 +96,7 @@ function Documents (privateClient, publicClient) {
      *   The created document also contains the newly created id property.
      */
     add: function (doc) {
-      var id = privateClient.uuid()
+      var id = uuid()
       return this.set(id, doc)
     },
 
@@ -147,7 +149,7 @@ function Documents (privateClient, publicClient) {
      *   A promise, which will be fulfilled with the path of the added document.
      */
     addRaw: function (contentType, data) {
-      var id = privateClient.uuid()
+      var id = uuid()
       var path = 'shared/' + id
       var url = this.getItemURL(path)
       return this.storeFile(contentType, path, data).then(function () {
